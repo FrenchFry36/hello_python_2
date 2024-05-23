@@ -26,3 +26,26 @@ def encryptMessage(message, cipherKey, alphabet):
         else:
             encryptedMessage = encryptedMessage + currentCharacter
     return encryptedMessage
+
+# Exercise 5: Decrypting a message
+def decryptMessage(message, cipherKey, alphabet):
+    decryptKey = -1 * int(cipherKey)
+    return encryptMessage(message, decryptKey, alphabet)
+
+# Exercise 6: Creating a main function
+def runCaesarCipherProgram():
+    myAlphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    print(f'Alphabet: {myAlphabet}')
+    myAlphabet2 = getDoubleAlphabet(myAlphabet)
+    print(f'Alphabet2: {myAlphabet2}')
+    myMessage = getMessage()
+    print(myMessage)
+    myCipherKey = getCipherKey()
+    print(myCipherKey)
+    myEncryptedMessage = encryptMessage(myMessage, myCipherKey, myAlphabet2)
+    print(f'Encrypted Message: {myEncryptedMessage}')
+    myDecryptedMessage = decryptMessage(myEncryptedMessage, myCipherKey, myAlphabet2)
+    print(f'Decypted Message: {myDecryptedMessage}')
+
+runCaesarCipherProgram()
+
